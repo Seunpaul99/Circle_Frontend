@@ -1,53 +1,44 @@
-# Circle — System Architecture
+# Circle System Architecture
 
-## Overview
-Circle is a friendship maintenance app designed to help users track connections, remember context, and schedule gentle reminders to reach out. This document outlines the technical architecture for an initial MVP.
+## Current state (implemented)
+This repository contains a frontend-only demo of Circle. The codebase implements a React + Vite single-page application (SPA) that demonstrates the UI and user flows with mock data. There is no backend, no persistent database, and no external notification integration in this workspace.
 
-## Components
-- Frontend: React (Vite) SPA
-- Backend: REST API (Node.js + Express) or optionally FastAPI (Python)
-- Database: PostgreSQL (primary), Redis (optional, for reminders / caching)
-- Notifications: Email via transactional service (SendGrid) and push notifications via Web Push (VAPID)
+## Implemented components (what's actually available)
+- Frontend stack:
+  - React + Vite (dev scripts in Circle_Frontend/package.json)
+  - Dependencies present: react, react-dom, axios (installed), vite, @vitejs/plugin-react (dev)
+- UI features implemented in code:
+  - Friend list view (Home page)
+  - FriendCard components showing name and last-contact info
+  - Basic actions in the UI such as "Remind me" and "Message" (UI-only; use mock handlers)
+- Project files present:
+  - src/ (React source files)
+  - index.html (Vite entry)
+  - Circle_Frontend/package.json (scripts and deps)
+  - Circle_Frontend/README.md (run instructions and feature notes)
+- State & data:
+  - Local component state and mock data (no persistent storage)
+  - No authentication flows implemented
 
-## Frontend
-- Built with React and Vite for fast dev builds.
-- Pages: Home (friend list), Friend detail, Reminders, Settings, Onboarding.
-- State: Local component state and React Context for auth/user; data fetched from backend via axios.
-- Offline/optimistic updates: Use local cache (IndexedDB or localStorage) for last-contact timestamps when offline; sync when reconnected.
+## Not implemented (what is missing in this repo)
+- No backend API (no implemented Express/FastAPI server)
+- No database or persistence (no PostgreSQL schema/migrations)
+- No authentication, JWTs, or secure cookies
+- No scheduled reminder worker, email, or push notification integrations
+- Any axios usage in the codebase is currently for local/mocked data or placeholders
 
-## Backend
-- REST API with endpoints:
-  - POST /auth/signup, POST /auth/login
-  - GET /users/:id/friends
-  - POST /users/:id/friends
-  - PATCH /users/:id/friends/:friendId (update notes, lastContact)
-  - POST /users/:id/reminders (schedule reminder)
-- Authentication: JWT access tokens + refresh tokens stored in httpOnly cookies.
-- Rate limiting and input validation using middleware.
+## Communication & runtime behavior
+- The frontend currently operates offline relative to a production API: it uses in-memory or mock data and does not persist changes across reloads.
+- Network calls to a real API are not implemented; to connect to a backend the frontend must be updated to point axios calls at real endpoints and handle auth.
 
-## Database
-- PostgreSQL with tables:
-  - users (id, name, email, password_hash, created_at)
-  - friends (id, user_id, name, notes, last_contact, contact_frequency)
-  - reminders (id, user_id, friend_id, remind_at, status)
-- Index on (user_id) for queries and on remind_at for scheduled jobs.
+## How to get this running locally
+1. cd Circle_Frontend
+2. npm install
+3. npm run dev
 
-## Communication
-- Frontend communicates with backend over HTTPS using JSON.
-- Scheduled reminder worker (Node.js or Python) polls DB for due reminders and sends notifications via SendGrid or Web Push.
-- For immediate push, backend will accept subscription objects from the frontend and store them tied to the user.
-
-## Feasibility & Scaling
-- Start with a single Node.js/Express instance and PostgreSQL. Scale by adding read replicas and moving caching to Redis.
-- Use managed services (Heroku, Render, Railway, or AWS Elastic Beanstalk) for faster deployment.
-
-## Security
-- Store passwords hashed with bcrypt.
-- Use HTTPS everywhere.
-- Protect routes with JWT and validate inputs.
-
-## Next Steps (backend)
-1. Create backend repo with express generator, define DB schema and migrations.
-2. Implement auth and friend endpoints with unit tests.
-3. Add reminder worker, integrate SendGrid and Web Push.
-4. Deploy to a staging environment and run end-to-end tests.
+## Recommended next steps to complete the architecture
+- Create a backend repository (Node/Express or FastAPI) implementing the planned REST endpoints.
+- Add PostgreSQL for data persistence and migrations.
+- Replace mock data in the frontend with real API calls (axios) and implement auth.
+- Implement a reminder worker and integrate email / web-push services.
+- Add end-to-end tests and CI/CD once backend and persistence are in place.
