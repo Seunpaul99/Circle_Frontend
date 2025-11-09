@@ -1,4 +1,4 @@
-# Circle — Frontend (Demo)
+# Circle Frontend
 
 This folder contains a simple React + Vite frontend demo for Circle, a friendship maintenance app.
 
