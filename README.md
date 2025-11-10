@@ -13,8 +13,6 @@ Screenshot of the figma showing mockup wireframe of the Circle
 
 <img width="346" height="669" alt="image" src="https://github.com/user-attachments/assets/33a35cb2-4637-496b-8d82-bef019018052" />
 
-Screenshot of the figma showing mockup wireframe of the Circle
-
 
 Files:
 - `src/` — React source files
