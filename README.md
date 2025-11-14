@@ -1,4 +1,4 @@
-# Circle 
+[Activities Planning Flow_text_20251114_d7cb95.txt](https://github.com/user-attachments/files/23554765/Activities.Planning.Flow_text_20251114_d7cb95.txt)[Circle screen_text_20251114_ff2154.txt](https://github.com/user-attachments/files/23554753/Circle.screen_text_20251114_ff2154.txt)[main_app_layout_text_20251114_0299b4.txt](https://github.com/user-attachments/files/23554740/main_app_layout_text_20251114_0299b4.txt)# Circle 
 Circle is a simple app that helps you stay connected with the important people in your life. It reminds you when you haven’t reached out to friends in a while and makes it easy to check in, send a message, or set reminders — so friendships don’t fade over time.
 
 This folder contains a simple React + Vite frontend demo for Circle, a friendship maintenance app.
@@ -174,7 +174,8 @@ Visual Guide & Key Screens
 Here’s a wireframe-style layout of the main navigation screens a user would see.
 
 1. Main App Layout with Bottom Navigation
-+------------------------------------+
+[+------------------------------------+
+[Uploadin+------------------------------------+
 |                                    |
 |  🏠 HOME / DASHBOARD              |
 |                                    |
@@ -206,11 +207,11 @@ Here’s a wireframe-style layout of the main navigation screens a user would se
     |    |    |    Activities
     |    |    Connect
     |    Circles
-    Home
+    Homeg main_app_layout_text_20251114_0299b4.txt…]()
 
 2. Key Screen Examples
 Circles Screen:
-+------------------------------------+
+[+------------------------------------++Uploading Circle screen_text_20251114_ff2154.txt…]
 | 👥 Circles              [+ Button] |
 |                                    |
 |  🔍 Search Circles...             |
@@ -224,7 +225,8 @@ Circles Screen:
 |  • College Buddies (8)            |
 |    👤👤👤👤... Last: 3 weeks ago  |  <-- "Nudge" indicator
 |                                    |
-+------------------------------------+
++------------------------------------()
+
 
 Connect Screen (The "Nudge" Center):
 +------------------------------------+
@@ -248,6 +250,25 @@ Connect Screen (The "Nudge" Center):
 
 
 Activities Planning Flow:
+[Up+------------------------------------+loading Activities Planning Flow_text_20251114_d7cb95.txt…]()
+| 🎯 Activities         [Plan New 🔽]|
+|                                    |
+|  Upcoming:                         |
+|  🏞️ Hike at Redwood Park - Sat    |
+|  with Adventure Crew               |
+|                                    |
+|  💡 Suggested Activities:          |
+|  🚶‍♂️ Nature Walk    ☕ Coffee     |
+|  🎳 Bowling        🎮 Game Night  |
+|  🏀 Basketball     🍽️ Dinner     |
+|                                    |
+|  Past Activities:                  |
+|  May 12: Coffee with Sarah ✅     |
+|  May 5: Game Night with Crew ✅   |
+|                                    |
++------------------------------------+
+
+
 +------------------------------------+
 | 🎯 Activities         [Plan New 🔽]|
 |                                    |
