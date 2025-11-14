@@ -126,7 +126,11 @@ The UI is intentionally minimal — it demonstrates friend cards, last-contact t
 
 
 **Circle App Navigation Map**
+
+<img width="8007" height="2758" alt="Circle_mermaid_20251114_19deab" src="https://github.com/user-attachments/assets/ced53e2a-be1b-4c2f-8a53-e2385ca847f1" />
+
 This diagram shows how a user would flow through the app to access its core features.
+
 flowchart TD
     A[App Launch] --> B[Home Screen / Dashboard]
 
